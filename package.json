@@ -1,0 +1,39 @@
+{
+  "name": "intermedia-gong-integration",
+  "version": "1.0.0",
+  "description": "Sync call recordings from Intermedia to Gong, including user mapping, call creation, and media upload.",
+  "type": "module",
+  "main": "src/intermediaToGong.js",
+  "scripts": {
+    "start": "node src/intermediaToGong.js",
+    "dev": "NODE_ENV=development node src/jobs/syncIntermediaToGong.job.js",
+    "lint": "echo \"Add eslint\"",
+    "clean": "rm -rf temp/intermedia-recordings"
+  },
+  "bin": {
+    "intermedia-gong-sync": "src/intermediaToGong.js"
+  },
+  "keywords": [
+    "intermedia",
+    "gong",
+    "call-recordings",
+    "crm-integration",
+    "nodejs",
+    "axios",
+    "api-sync"
+  ],
+  "author": "Mohammad Saddam",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "base-64": "^1.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "form-data": "^4.0.5",
+    "winston": "^3.18.3",
+    "winston-daily-rotate-file": "^5.0.0"
+  }
+}
