@@ -181,6 +181,10 @@ function markUserAsProcessed(userId) {
 
 const USER_PATH = path.join(process.cwd(), "intermedia-users.json");
 
+const ONE_HOUR_MS = 60 * 60 * 1000;
+// const sevenDayAgo = new Date(Date.now() - 6 * 24 * ONE_HOUR_MS);
+const fromDate = new Date("2025-12-01T00:00:00Z");
+
 async function syncIntermediaToGongHistoricRecords() {
   try {
     const lastCheckpoint = getLastCheckpoint();
@@ -198,7 +202,7 @@ async function syncIntermediaToGongHistoricRecords() {
       const gongId = buildUserIdMap(user.displayName);
       if (!gongId) continue;
 
-      const recordings = await fetchIntermediaCallRecordings(user.id);
+      const recordings = await fetchIntermediaCallRecordings(user.id, fromDate);
       if (!recordings?.length) {
         markUserAsProcessed(user.id);
         continue;
@@ -206,7 +210,14 @@ async function syncIntermediaToGongHistoricRecords() {
 
       // let userFullySynced = true;
       logger.info(`Recordings found: ${recordings.length}`);
-      // const filesToCleanup = [];
+      logger.info(
+        `Recordings found: ${JSON.stringify(recordings[0], null, 2)}`
+      );
+      logger.info(
+        `Recordings found: ${JSON.stringify(recordings[388], null, 2)}`
+      );
+
+      return;
       const filesToCleanup = new Set();
 
       for (const recording of recordings) {
