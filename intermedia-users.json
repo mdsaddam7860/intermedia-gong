@@ -1,0 +1,864 @@
+{
+  "results": [
+    {
+      "id": "ab414ad7-b8c4-475e-9c59-a3142ceb7990",
+      "type": "user",
+      "displayName": "Joe Sanden",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "joe@skidpro.com",
+      "managerId": null,
+      "avatarId": "6b1766e5-fb1f-42a9-9e56-808d489beca2",
+      "phoneNumbers": [
+        {
+          "type": "mobilePhone",
+          "number": "+17013615708",
+          "internationalFormatNumber": "+17013615708",
+          "codes": null
+        },
+        {
+          "type": "pbxPhone",
+          "number": "+13204608070",
+          "internationalFormatNumber": "+13204608070",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 50644,
+        "enabled": true,
+        "extension": "0116"
+      },
+      "messaging": {
+        "jid": "222dac1e-3794-4d3b-8e53-ec594b804ac0@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "64710c6f-f5d9-458a-af71-570f28fb68d6",
+      "type": "user",
+      "displayName": "Erik Gullickson",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "erik@skidpro.com",
+      "managerId": null,
+      "avatarId": "ff3651ab-067f-447a-a752-4da5daf60d44",
+      "phoneNumbers": [
+        {
+          "type": "mobilePhone",
+          "number": "+13202951922",
+          "internationalFormatNumber": "+13202951922",
+          "codes": null
+        },
+        {
+          "type": "pbxPhone",
+          "number": "+13204608071",
+          "internationalFormatNumber": "+13204608071",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 50632,
+        "enabled": true,
+        "extension": "0117"
+      },
+      "messaging": {
+        "jid": "fcfc8d91-eeb5-44c2-a9f1-701f9bb66b7f@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "686c956a-bf89-4ffa-9e25-b8ecfdd142fb",
+      "type": "user",
+      "displayName": "Todd Westlund",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "todd@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "mobilePhone",
+          "number": "+13208159803",
+          "internationalFormatNumber": "+13208159803",
+          "codes": null
+        },
+        {
+          "type": "pbxPhone",
+          "number": "+13204608069",
+          "internationalFormatNumber": "+13204608069",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 50658,
+        "enabled": true,
+        "extension": "0115"
+      },
+      "messaging": {
+        "jid": "5af3d2fa-d0cf-478a-9283-e545a711c8fa@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "8a5bcbd5-c8b3-4f85-b613-b66b53445d82",
+      "type": "user",
+      "displayName": "Jeremy Johnson",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "jeremy@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "pbxPhone",
+          "number": "+13204608064",
+          "internationalFormatNumber": "+13204608064",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 50640,
+        "enabled": true,
+        "extension": "0110"
+      },
+      "messaging": {
+        "jid": "d5bf6eab-cc80-4ef5-86a6-0b66279de8b1@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+
+    {
+      "id": "abdebc60-a935-49bf-a779-8e8ce98e77b8",
+      "type": "user",
+      "displayName": "Chris Wessel",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "chris@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "mobilePhone",
+          "number": "+13204916050",
+          "internationalFormatNumber": "+13204916050",
+          "codes": null
+        },
+        {
+          "type": "pbxPhone",
+          "number": "+13204608068",
+          "internationalFormatNumber": "+13204608068",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 50618,
+        "enabled": true,
+        "extension": "0114"
+      },
+      "messaging": {
+        "jid": "709573ee-467a-4e5a-ab1f-f11d01789978@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "cd62ec57-49bd-4102-bb52-ed0573a1794f",
+      "type": "user",
+      "displayName": "Shane Matchinsky",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "shane@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "pbxPhone",
+          "number": "+13204608067",
+          "internationalFormatNumber": "+13204608067",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 50656,
+        "enabled": true,
+        "extension": "0113"
+      },
+      "messaging": {
+        "jid": "dbbde0fc-ec6e-433d-b5af-5e78ba1fa52b@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "647164db-3e7a-4cd2-9884-85218ead7948",
+      "type": "user",
+      "displayName": "Brad Klinkner",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "brad@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "mobilePhone",
+          "number": "+13207609081",
+          "internationalFormatNumber": "+13207609081",
+          "codes": null
+        },
+        {
+          "type": "pbxPhone",
+          "number": "+13204608062",
+          "internationalFormatNumber": "+13204608062",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 50614,
+        "enabled": true,
+        "extension": "0108"
+      },
+      "messaging": {
+        "jid": "dd794b92-0791-4d52-8037-b38f0e00e583@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "b0df8d92-acf2-40c5-9d47-df1b02f714e1",
+      "type": "user",
+      "displayName": "Dick Matchinsky",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "dick@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "pbxPhone",
+          "number": "+13204608065",
+          "internationalFormatNumber": "+13204608065",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 50628,
+        "enabled": true,
+        "extension": "0111"
+      },
+      "messaging": {
+        "jid": "9db28781-f854-43b6-a4ea-d155acdbc834@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "615b39a2-20b8-4a9a-8213-c746741b2efe",
+      "type": "user",
+      "displayName": "James Dyrdahl",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "james@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "pbxPhone",
+          "number": "+13204608066",
+          "internationalFormatNumber": "+13204608066",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 50636,
+        "enabled": true,
+        "extension": "0112"
+      },
+      "messaging": {
+        "jid": "7f3b5c6b-b105-44a6-9f27-bf4c9c02793d@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "55f4ec65-a1ed-4066-a1a6-cfc493d12bb3",
+      "type": "user",
+      "displayName": "Randy Anderson",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "randy@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "mobilePhone",
+          "number": "+13204608061",
+          "internationalFormatNumber": "+13204608061",
+          "codes": null
+        },
+        {
+          "type": "pbxPhone",
+          "number": "+13204608061",
+          "internationalFormatNumber": "+13204608061",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 50652,
+        "enabled": true,
+        "extension": "0107"
+      },
+      "messaging": {
+        "jid": "9e44b468-1239-44c6-8566-198d5e966c90@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "2ce194df-6aab-469c-923b-a04f2c4e5a5c",
+      "type": "user",
+      "displayName": "Cory Clark",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "cory@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "mobilePhone",
+          "number": "+17013705025",
+          "internationalFormatNumber": "+17013705025",
+          "codes": null
+        },
+        {
+          "type": "pbxPhone",
+          "number": "+13204608074",
+          "internationalFormatNumber": "+13204608074",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 50624,
+        "enabled": true,
+        "extension": "0120"
+      },
+      "messaging": {
+        "jid": "3c68dc64-f258-460c-8a9e-1b266dbbba53@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "17e3c0c1-9e27-4043-9331-a0b471fbeb08",
+      "type": "user",
+      "displayName": "Drew Torgerson",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "drew@skidpro.com",
+      "managerId": null,
+      "avatarId": "6fb3bd24-6b2c-4ce1-b283-7709909c9879",
+      "phoneNumbers": [
+        {
+          "type": "mobilePhone",
+          "number": "+12182057962",
+          "internationalFormatNumber": "+12182057962",
+          "codes": null
+        },
+        {
+          "type": "pbxPhone",
+          "number": "+13204608079",
+          "internationalFormatNumber": "+13204608079",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 50630,
+        "enabled": true,
+        "extension": "0131"
+      },
+      "messaging": {
+        "jid": "c4724d27-5983-4a9c-9cd9-d5dd5b756979@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "df6751cc-d1f5-4052-9fa7-0793a27466f4",
+      "type": "user",
+      "displayName": "Tyson Langlie",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "tyson@skidpro.com",
+      "managerId": null,
+      "avatarId": "49c3cd4a-6c72-4806-afb3-0c36f23c277c",
+      "phoneNumbers": [
+        {
+          "type": "mobilePhone",
+          "number": "+12187700330",
+          "internationalFormatNumber": "+12187700330",
+          "codes": null
+        },
+        {
+          "type": "pbxPhone",
+          "number": "+13204608080",
+          "internationalFormatNumber": "+13204608080",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 50660,
+        "enabled": true,
+        "extension": "0133"
+      },
+      "messaging": {
+        "jid": "89c8844e-d484-4b11-b20f-c914489133de@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "d086df7b-ebf9-47c9-9460-6cd8f4371e27",
+      "type": "user",
+      "displayName": "Casey Rudolf",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "casey@skidpro.com",
+      "managerId": null,
+      "avatarId": "beb898fc-f46a-4017-a10c-b22297487941",
+      "phoneNumbers": [
+        {
+          "type": "pbxPhone",
+          "number": "+13202196285",
+          "internationalFormatNumber": "+13202196285",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 50616,
+        "enabled": true,
+        "extension": "6285"
+      },
+      "messaging": {
+        "jid": "0b4d958e-81c0-42af-9cbd-2ce07c7875ba@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "ef9ba6fb-3fa1-4199-b42d-146153cb77c4",
+      "type": "user",
+      "displayName": "Erik Larum",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "elarum@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "pbxPhone",
+          "number": "+13204609682",
+          "internationalFormatNumber": "+13204609682",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 50634,
+        "enabled": true,
+        "extension": "1009"
+      },
+      "messaging": {
+        "jid": "9368f926-101b-42e0-88dd-60d876e21244@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "5f167240-e494-46b6-83f9-a31a7ccbaba1",
+      "type": "user",
+      "displayName": "Tanner Rice",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "tanner@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "mobilePhone",
+          "number": "+13208081214",
+          "internationalFormatNumber": "+13208081214",
+          "codes": null
+        },
+        {
+          "type": "pbxPhone",
+          "number": "+13202706984",
+          "internationalFormatNumber": "+13202706984",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 73118,
+        "enabled": true,
+        "extension": "1002"
+      },
+      "messaging": {
+        "jid": "e5a336ac-59a6-401a-b562-cebf453bcf3d@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "41b17ca0-5b80-41d7-9546-a45b342290ba",
+      "type": "user",
+      "displayName": "Chris Curry",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "chrisc@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "pbxPhone",
+          "number": "+13203355474",
+          "internationalFormatNumber": "+13203355474",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 77690,
+        "enabled": true,
+        "extension": "1005"
+      },
+      "messaging": {
+        "jid": "11e7dafd-7385-4e2b-9aa2-054a654029d3@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "20af35ee-97a0-4117-a0b2-1f7b44d41e66",
+      "type": "user",
+      "displayName": "Bill Klitzke",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "bill@skidpro.com",
+      "managerId": null,
+      "avatarId": "da7803d6-d4cc-4c8c-846f-09947bbec7f1",
+      "phoneNumbers": [
+        {
+          "type": "pbxPhone",
+          "number": "+13203355479",
+          "internationalFormatNumber": "+13203355479",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 78106,
+        "enabled": true,
+        "extension": "1006"
+      },
+      "messaging": {
+        "jid": "53c26abe-0d35-4ba3-ba93-8956c844abc2@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "91bbaa86-b8d5-4516-8a6c-227fa1d88e5e",
+      "type": "user",
+      "displayName": "Beau Idalski",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "beau@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "pbxPhone",
+          "number": "+13204608076",
+          "internationalFormatNumber": "+13204608076",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 79446,
+        "enabled": true,
+        "extension": "1008"
+      },
+      "messaging": {
+        "jid": "ffa88752-57eb-4505-83fa-1cac415c8e9d@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "1543a0aa-b180-4bac-af01-81ecd3f471b3",
+      "type": "user",
+      "displayName": "Marc Fritz",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "marc@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "mobilePhone",
+          "number": "+13202325167",
+          "internationalFormatNumber": "+13202325167",
+          "codes": null
+        },
+        {
+          "type": "pbxPhone",
+          "number": "+13203355468",
+          "internationalFormatNumber": "+13203355468",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 79450,
+        "enabled": true,
+        "extension": "1012"
+      },
+      "messaging": {
+        "jid": "a198e01d-a6be-4c54-abde-fe17f8c2f719@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "3f2f22c0-27df-417a-8f63-cd1ec5aa6dd9",
+      "type": "user",
+      "displayName": "Corey Sammons",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "corey.sammons@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "mobilePhone",
+          "number": "+13202986121",
+          "internationalFormatNumber": "+13202986121",
+          "codes": null
+        },
+        {
+          "type": "pbxPhone",
+          "number": "+13203355470",
+          "internationalFormatNumber": "+13203355470",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 82620,
+        "enabled": true,
+        "extension": "1029"
+      },
+      "messaging": {
+        "jid": "4825977a-82c0-4b2f-ab68-c21212fa9442@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "347a08b4-01aa-438b-a86a-23b43d8d24ea",
+      "type": "user",
+      "displayName": "Luke Sandwick",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "luke.sandwick@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "pbxPhone",
+          "number": "+13203355467",
+          "internationalFormatNumber": "+13203355467",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 82812,
+        "enabled": true,
+        "extension": "1030"
+      },
+      "messaging": {
+        "jid": "d2eb7306-1e72-43e1-8137-016ee5bb7f54@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "8d65bcdd-ee29-49ab-ade1-7758447208b3",
+      "type": "user",
+      "displayName": "Chris Yerkes",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "chris.yerkes@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "mobilePhone",
+          "number": "+13204693288",
+          "internationalFormatNumber": "+13204693288",
+          "codes": null
+        },
+        {
+          "type": "pbxPhone",
+          "number": "+13203089586",
+          "internationalFormatNumber": "+13203089586",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 85508,
+        "enabled": true,
+        "extension": "1010"
+      },
+      "messaging": {
+        "jid": "7a486b76-381d-40e2-9ade-a5b1644c5782@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "9e6cdec6-a8b7-4db2-b793-bc43cd952bb7",
+      "type": "user",
+      "displayName": "Kyle Donlea",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "kyle.donlea@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "pbxPhone",
+          "number": "+13203089527",
+          "internationalFormatNumber": "+13203089527",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 86060,
+        "enabled": true,
+        "extension": "1035"
+      },
+      "messaging": {
+        "jid": "a7a06d13-9ac6-4a36-b60b-59041ad04be8@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "86b8ee2d-cc43-46dd-8538-8525cc556c2f",
+      "type": "user",
+      "displayName": "Austin Larson",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "austin.larson@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "pbxPhone",
+          "number": "+13207599014",
+          "internationalFormatNumber": "+13207599014",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 86428,
+        "enabled": true,
+        "extension": "1000"
+      },
+      "messaging": {
+        "jid": "cf00e982-9a41-449c-a97b-131a29ac7ee2@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    },
+    {
+      "id": "c24f48c7-b099-40f7-9344-cef17cb86732",
+      "type": "user",
+      "displayName": "Hayden Johnston",
+      "phoneticFirstName": null,
+      "phoneticLastName": null,
+      "department": null,
+      "title": null,
+      "location": null,
+      "email": "hayden.johnston@skidpro.com",
+      "managerId": null,
+      "avatarId": null,
+      "phoneNumbers": [
+        {
+          "type": "pbxPhone",
+          "number": "+13204608072",
+          "internationalFormatNumber": "+13204608072",
+          "codes": null
+        }
+      ],
+      "pbx": {
+        "pbxId": 84556,
+        "enabled": true,
+        "extension": "1032"
+      },
+      "messaging": {
+        "jid": "63608bfb-1c99-4e5d-aaee-820ab1519705@ips44.telecomsvc.com",
+        "enabled": true
+      }
+    }
+  ],
+  "nextPageOffsetToken": null
+}
