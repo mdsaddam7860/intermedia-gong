@@ -162,7 +162,10 @@ import {
   saveCheckpoint,
   getJob,
   updateJob,
+  removeTempRecordingsDir,
 } from "../index.js";
+import { intermediaExecutor, gongExecutor } from "../utils/executors.js";
+
 import fs from "fs";
 import path from "path";
 
@@ -183,7 +186,7 @@ const USER_PATH = path.join(process.cwd(), "intermedia-users.json");
 
 const ONE_HOUR_MS = 60 * 60 * 1000;
 // const sevenDayAgo = new Date(Date.now() - 6 * 24 * ONE_HOUR_MS);
-const fromDate = new Date("2025-12-01T00:00:00Z");
+const fromDate = new Date("2026-01-08T00:00:00Z");
 
 async function syncIntermediaToGongHistoricRecords() {
   try {
@@ -194,89 +197,124 @@ async function syncIntermediaToGongHistoricRecords() {
     const processedUsers = getProcessedUsers();
 
     for (const user of userData.results) {
-      if (processedUsers.has(user.id)) {
-        logger.info(`Skipping user ${user.displayName} (already fully synced)`);
-        continue;
-      }
+      // if (processedUsers.has(user.id)) {
+      //   logger.info(`Skipping user ${user.displayName} (already fully synced)`);
+      //   continue;
+      // }
 
       const gongId = buildUserIdMap(user.displayName);
       if (!gongId) continue;
 
-      const recordings = await fetchIntermediaCallRecordings(user.id, fromDate);
-      if (!recordings?.length) {
-        markUserAsProcessed(user.id);
+      let recordings = [];
+
+      recordings = await intermediaExecutor(
+        () => fetchIntermediaCallRecordings(user.id, fromDate),
+
+        { userId: user.id }
+      );
+      if (!recordings) {
+        logger.info(`No recording found for userId : ${user.id}`);
         continue;
       }
 
-      // let userFullySynced = true;
-      logger.info(`Recordings found: ${recordings.length}`);
       logger.info(
-        `Recordings found: ${JSON.stringify(recordings[0], null, 2)}`
-      );
-      logger.info(
-        `Recordings found: ${JSON.stringify(recordings[388], null, 2)}`
+        `Recordings: ${recordings.length} for User : ${user.displayName}`
       );
 
-      return;
       const filesToCleanup = new Set();
+      let userFullySynced = true;
 
-      for (const recording of recordings) {
+      for (const [index, recording] of recordings.entries()) {
         try {
-          const job = getJob(recording.id);
-          if (job?.status === "DONE") continue;
-
-          const payload = mapIntermediaCallToGongPayload(
-            recording,
-            user,
-            gongId
+          logger.info(
+            `Processing recording ${index + 1} of ${
+              recordings.length
+            } for User : ${user.displayName}`
           );
+          let job = getJob(recording.id);
+          if (job?.status === "DONE") {
+            logger.info(`Skipping completed job ${recording.id}`);
+            continue;
+          }
 
+          const payload = mapIntermediaCallToGongPayload(recording, gongId);
+
+          // Create Gong Call (resume-safe)
           let gongCallId = job?.gongCallId;
           if (!gongCallId) {
-            const gongRecording = await createGongCall(payload);
+            const gongRecording = await gongExecutor(
+              () => createGongCall(payload),
+              { recording }
+            );
+
             gongCallId = gongRecording?.callId;
 
             if (!gongCallId) continue;
 
+            // Update job with gongCallId
             updateJob(recording.id, {
               status: "CALL_CREATED",
               gongCallId,
             });
+
+            // fetch updated job
+            // getJob(recording.id);
           }
 
+          // Download media (resume-safe)
           let filePath = job?.filePath;
           if (!filePath || !fs.existsSync(filePath)) {
-            filePath = await downloadIntermediaRecording(recording.id);
+            filePath = await intermediaExecutor(
+              () => downloadIntermediaRecording(recording.id),
+
+              { recordingId: recording.id }
+            );
             updateJob(recording.id, {
               status: "DOWNLOADED",
               filePath,
               createdAt: recording.createdAt,
             });
+
+            // getJob(recording.id);
+
+            // Save to remove later
+            if (filePath && fs.existsSync(filePath)) {
+              filesToCleanup.add(filePath);
+            }
           }
 
+          // upload recording to gong (resume-safe)
           if (job?.status !== "UPLOADED") {
-            await uploadMediaToGong(gongCallId, filePath);
+            const uploadRecording = await gongExecutor(
+              () => uploadMediaToGong(gongCallId, filePath),
+              { recordingId: recording.id }
+            );
+
+            logger.info(
+              `Media uploaded to Gong: ${JSON.stringify(
+                uploadRecording,
+                null,
+                2
+              )}`
+            );
             updateJob(recording.id, { status: "UPLOADED" });
+            // getJob(recording.id);
           }
 
           markAsSynced(recording.id);
           updateJob(recording.id, { status: "DONE" });
 
-          if (filePath && fs.existsSync(filePath)) {
-            filesToCleanup.add(filePath);
-          }
-
-          const createdAt = new Date(recording.createdAt);
-          if (!newestProcessedDate || createdAt > newestProcessedDate) {
-            newestProcessedDate = createdAt;
-          }
+          // const createdAt = new Date(recording.createdAt);
+          // if (!newestProcessedDate || createdAt > newestProcessedDate) {
+          //   newestProcessedDate = createdAt;
+          // }
         } catch (err) {
           logger.error(
             `Job failed for User ${user.id} : recording ${recording.id}`,
             err
           );
-          updateJob(recording.id, { status: "DONE" });
-          // userFullySynced = false;
+          // updateJob(recording.id, { status: "DONE" });
+          userFullySynced = false;
           // break; // stop processing this user
         }
       }
@@ -299,19 +337,24 @@ async function syncIntermediaToGongHistoricRecords() {
           logger.warn(`Failed to delete file ${file}`, err);
         }
       }
-      // }
     }
+    // }
 
-    if (newestProcessedDate) {
-      saveCheckpoint(newestProcessedDate);
-      logger.info(`Checkpoint updated: ${newestProcessedDate.toISOString()}`);
-    }
+    // if (
+    //   newestProcessedDate instanceof Date &&
+    //   !isNaN(newestProcessedDate.getTime())
+    // ) {
+    //   saveCheckpoint(newestProcessedDate);
+    //   logger.info(`Checkpoint updated: ${newestProcessedDate.toISOString()}`);
+    // } else {
+    //   logger.error("Invalid newestProcessedDate:", newestProcessedDate);
+    // }
   } catch (error) {
     logger.error("Error syncing Historic Records to Gong:", error);
+  } finally {
+    removeTempRecordingsDir();
   }
 }
-
-logger.info("✅ Syncing Historic Records to Gong DONE");
 
 // async function syncIntermediaToGongHistoricRecords() {
 //   try {

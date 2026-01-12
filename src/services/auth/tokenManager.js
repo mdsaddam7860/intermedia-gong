@@ -9,16 +9,27 @@ const TOKEN_PATH = path.join(process.cwd(), "gong-token.json");
 
 // Refresh if less than 6 days left
 // const REFRESH_THRESHOLD_SECONDS = 525000; // 6 days
-const REFRESH_THRESHOLD_SECONDS = 1 * 24 * 60 * 60; // 6 days
+const REFRESH_THRESHOLD_SECONDS = 5.5 * 24 * 60 * 60; // 475,200 seconds
+const REFRESH_BEFORE_EXPIRY_SECONDS = 6 * 60 * 60; // 6 hours
 
 async function getGongAccessToken() {
   try {
     const tokenData = JSON.parse(fs.readFileSync(TOKEN_PATH, "utf8"));
     const now = Math.floor(Date.now() / 1000);
 
-    if (tokenData.expires_at > now + REFRESH_THRESHOLD_SECONDS) {
+    if (
+      typeof tokenData.expires_at === "number" &&
+      tokenData.expires_at - now > REFRESH_BEFORE_EXPIRY_SECONDS
+    ) {
       return tokenData.access_token;
     }
+
+    // if (
+    //   typeof tokenData.expires_at === "number" &&
+    //   tokenData.expires_at > now + REFRESH_THRESHOLD_SECONDS
+    // ) {
+    //   return tokenData.access_token;
+    // }
 
     return await refreshGongToken(tokenData.refresh_token);
   } catch (_) {

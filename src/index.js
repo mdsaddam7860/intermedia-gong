@@ -2,6 +2,7 @@ import { logger } from "./utils/winstonLogger.js";
 import {
   fetchIntermediaCallRecordings,
   downloadIntermediaRecording,
+  removeTempRecordingsDir,
 } from "./services/intermedia.service.js";
 
 import {
@@ -39,6 +40,7 @@ import {
 // import {} from ""
 
 export {
+  removeTempRecordingsDir,
   Throttle,
   throttle,
   createRequestExecutor,

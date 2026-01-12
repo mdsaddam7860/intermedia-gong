@@ -78,7 +78,7 @@ const gongUserId = "904917957461791869";
 //   return payload;
 // }
 
-function mapIntermediaCallToGongPayload(recording, user, gongId) {
+function mapIntermediaCallToGongPayload(recording, gongId) {
   if (!recording || !gongId) {
     logger.warn("Missing recording or Gong user ID");
     return null;

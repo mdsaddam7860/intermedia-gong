@@ -20,7 +20,7 @@ async function createGongCall(callBody) {
       "❌ Gong call creation failed:",
       error.response?.data || error
     );
-    return null;
+    throw error;
   }
 }
 
@@ -124,7 +124,7 @@ async function uploadMediaToGong(callId, mediaFilePath) {
   } catch (error) {
     logger.error(
       "Error uploading media to Gong:",
-      error.response?.data || error.message
+      error.response?.data || error
     );
     return null;
   }

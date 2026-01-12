@@ -217,6 +217,17 @@ const TEMP_RECORDINGS_DIR = path.resolve(
   "temp",
   "intermedia-recordings"
 );
+const removeTempRecordingsDir = async () => {
+  try {
+    fs.rmSync(TEMP_RECORDINGS_DIR, {
+      recursive: true,
+      force: true,
+    });
+    logger.info("Removed temp recordings directory");
+  } catch (error) {
+    logger.error("Failed to remove temp recordings directory", error);
+  }
+};
 async function downloadIntermediaRecording(recordingId) {
   if (!recordingId) {
     logger.warn("Missing recordingId");
@@ -262,4 +273,8 @@ async function downloadIntermediaRecording(recordingId) {
 // Example usage
 // await downloadIntermediaRecording("264bf547-6741-4684-b474-084498c73e9b", "13145650", "./downloads");
 
-export { fetchIntermediaCallRecordings, downloadIntermediaRecording };
+export {
+  fetchIntermediaCallRecordings,
+  downloadIntermediaRecording,
+  removeTempRecordingsDir,
+};

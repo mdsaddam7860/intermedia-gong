@@ -13,16 +13,16 @@ function gongAxios(token) {
         Authorization: `Bearer ${token}`,
       },
     });
+  } else {
+    // if token is not present then use basic token
+    return axios.create({
+      baseURL: "https://api.gong.io",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Basic ${process.env.GONG_BASIC_TOKEN}`,
+      },
+    });
   }
-
-  // if token is not present then use basic token
-  return axios.create({
-    baseURL: "https://api.gong.io",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Basic ${process.env.GONG_BASIC_TOKEN}`,
-    },
-  });
 }
 
 function intermediaAxios(token) {
