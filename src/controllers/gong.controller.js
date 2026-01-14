@@ -20,7 +20,15 @@ import { intermediaExecutor, gongExecutor } from "../utils/executors.js";
 import path from "path";
 import fs from "fs";
 
-const USER_PATH = path.join(process.cwd(), "intermedia-users.json");
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// go from src/controllers → src → public_html
+const USER_PATH = path.resolve(__dirname, "../../intermedia-users.json");
+
+// const USER_PATH = path.join(process.cwd(), "intermedia-users.json");
 
 const lastCheckpoint = getLastCheckpoint(); // may be null
 const syncedIds = getSyncedIds();

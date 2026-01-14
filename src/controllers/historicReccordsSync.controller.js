@@ -17,6 +17,7 @@ import { intermediaExecutor, gongExecutor } from "../utils/executors.js";
 
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 
 const PROCESSED_USERS_PATH = path.join(process.cwd(), "processed-users.json");
 
@@ -30,8 +31,13 @@ function markUserAsProcessed(userId) {
   users.add(userId);
   fs.writeFileSync(PROCESSED_USERS_PATH, JSON.stringify([...users], null, 2));
 }
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const USER_PATH = path.join(process.cwd(), "intermedia-users.json");
+// go from src/controllers → src → public_html
+const USER_PATH = path.resolve(__dirname, "../../intermedia-users.json");
+
+// const USER_PATH = path.join(process.cwd(), "intermedia-users.json");
 
 const ONE_HOUR_MS = 60 * 60 * 1000;
 // const sevenDayAgo = new Date(Date.now() - 6 * 24 * ONE_HOUR_MS);
