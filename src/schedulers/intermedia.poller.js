@@ -1,5 +1,5 @@
 import cron from "node-cron";
-import { logger } from "../index.js";
+import { logger, getGongAccessToken } from "../index.js";
 import { syncIntermediaToGong } from "../controllers/gong.controller.js";
 
 let isRunning = false; // in-process lock
@@ -17,6 +17,8 @@ const startIntermediaPolling = () => {
     logger.info("Intermedia polling started");
 
     try {
+      const token = await getGongAccessToken();
+      logger.info(`Gong access token: ${token.slice(0, 10)}...`);
       await syncIntermediaToGong();
       logger.info("Intermedia polling completed successfully");
     } catch (error) {
