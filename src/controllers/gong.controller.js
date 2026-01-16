@@ -158,8 +158,25 @@ async function syncIntermediaToGong() {
               err
             );
             userFullySynced = false;
-            // updateJob(recording.id, { status: "DONE" });
-            // break; // stop processing this user
+            const errorMessage =
+              err?.errors?.join(" ") ||
+              err?.response?.data?.errors?.join(" ") ||
+              err?.message ||
+              "";
+
+            if (
+              errorMessage.includes(
+                "Recording or telephony call import is not enabled"
+              )
+            ) {
+              logger.warn(
+                `Telephony import not enabled for User ${user.displayName}. Stopping further processing for this user.`
+              );
+
+              break; // ✅ exit recording loop immediately
+            }
+
+            // otherwise continue with next recording
           }
         }
 
