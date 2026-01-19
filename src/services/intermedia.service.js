@@ -208,7 +208,9 @@ async function fetchIntermediaCallRecordings(userId, lastCheckpoint = null) {
       "Error fetching Intermedia call recordings:",
       error?.response?.data || error
     );
-    return null;
+    // return null;
+    // 🔥 MUST rethrow
+    throw error;
   }
 }
 
@@ -267,7 +269,9 @@ async function downloadIntermediaRecording(recordingId) {
       "Error downloading Intermedia recording:",
       error.response?.data || error
     );
-    return null;
+    // return null;
+    // 🔥 MUST rethrow
+    throw error;
   }
 }
 // Example usage

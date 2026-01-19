@@ -110,23 +110,23 @@ async function syncIntermediaToGong() {
             }
 
             let filePath = job?.filePath;
-            if (!filePath || !fs.existsSync(filePath)) {
-              filePath = await intermediaExecutor(
-                () => downloadIntermediaRecording(recording.id),
+            // if (!filePath || !fs.existsSync(filePath)) { // always download again
+            filePath = await intermediaExecutor(
+              () => downloadIntermediaRecording(recording.id),
 
-                { recordingId: recording.id }
-              );
-              updateJob(recording.id, {
-                status: "DOWNLOADED",
-                filePath,
-                createdAt: recording.createdAt,
-              });
+              { recordingId: recording.id }
+            );
+            updateJob(recording.id, {
+              status: "DOWNLOADED",
+              filePath,
+              createdAt: recording.createdAt,
+            });
 
-              // Save to remove later
-              if (filePath && fs.existsSync(filePath)) {
-                filesToCleanup.add(filePath);
-              }
+            // Save to remove later
+            if (filePath && fs.existsSync(filePath)) {
+              filesToCleanup.add(filePath);
             }
+            // }
 
             if (job?.status !== "UPLOADED") {
               const uploadRecording = await gongExecutor(

@@ -16,10 +16,11 @@ async function createGongCall(callBody) {
     logger.info("✔️ Gong call created successfully!");
     return response.data;
   } catch (error) {
-    console.error(
-      "❌ Gong call creation failed:",
+    logger.error(
+      `❌ Gong call creation failed:`,
       error.response?.data || error
     );
+    // 🔥 MUST rethrow
     throw error;
   }
 }
@@ -36,10 +37,7 @@ async function getGongUsers() {
     );
     return response.data.users || [];
   } catch (error) {
-    console.error(
-      "❌ Failed to fetch Gong users:",
-      error.response?.data || error.message
-    );
+    logger.error(`❌ Failed to fetch Gong users:`, error);
     return [];
   }
 }
@@ -54,10 +52,7 @@ async function getGongUser(userId, email) {
 
     return response.data || null; // user
   } catch (error) {
-    console.error(
-      "❌ Error fetching Gong user:",
-      error.response?.data || error.message
-    );
+    logger.error(`❌ Error fetching Gong user:`, error);
     return null;
   }
 }
@@ -122,11 +117,9 @@ async function uploadMediaToGong(callId, mediaFilePath) {
 
     return response.data;
   } catch (error) {
-    logger.error(
-      "Error uploading media to Gong:",
-      error.response?.data || error
-    );
-    return null;
+    logger.error(`Error uploading media to Gong:`, error);
+    // 🔥 MUST rethrow
+    throw error;
   }
 }
 export { createGongCall, getGongUsers, getGongUser, uploadMediaToGong };
